@@ -15,10 +15,12 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
+
     private String productName;
     private Double productPrice;
     private String productPictureUrl;
     private boolean isActive;
+
     @Enumerated(value = EnumType.STRING)
     private ProductCategory productCategory;
 }

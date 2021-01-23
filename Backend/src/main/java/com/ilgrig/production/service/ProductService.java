@@ -18,17 +18,17 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    public Product getProduct(long productId){
+    public Product getProduct(long productId) {
         return productRepository
                 .findById(productId)
                 .orElseThrow(() -> new ResourceAccessException("product not found"));
     }
 
-    public Product saveProduct(Product product){
-        return productRepository.save(product);
+    public void saveProduct(Product product) {
+        productRepository.save(product);
     }
 }
