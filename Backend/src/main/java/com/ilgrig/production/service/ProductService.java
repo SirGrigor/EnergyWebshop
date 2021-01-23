@@ -5,9 +5,11 @@ import com.ilgrig.production.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class ProductService {
 
     private final ProductRepository productRepository;

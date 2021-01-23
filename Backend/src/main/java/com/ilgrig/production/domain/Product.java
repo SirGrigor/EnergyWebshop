@@ -10,27 +10,15 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "product_id")
     private Long productId;
-
-    @Column(columnDefinition = "product_name")
     private String productName;
-
-    @Column(columnDefinition = "product_price")
     private Double productPrice;
-
-    @Column(columnDefinition = "product_picture")
     private String productPictureUrl;
-
-    @Column(columnDefinition = "product_status")
-    private boolean productStatus;
-
-    @Column(columnDefinition = "product_category")
+    private boolean isActive;
     @Enumerated(value = EnumType.STRING)
     private ProductCategory productCategory;
 }

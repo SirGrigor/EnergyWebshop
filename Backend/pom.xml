@@ -12,7 +12,7 @@
     <artifactId>production</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>production</name>
-    <description>SprinbBoot + Angular Webshop. Eesti Energia Assignment.</description>
+    <description> SpringBoot + Angular Eshop. Est Energy Assignment.</description>
     <properties>
         <java.version>11</java.version>
     </properties>
