@@ -8,13 +8,17 @@ import { ProductComponent } from './product/product.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {EcommerceService} from './services/EcommerceService';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EcommerceComponent,
-    ProductComponent
+    ProductComponent,
+    ShoppingCartComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
