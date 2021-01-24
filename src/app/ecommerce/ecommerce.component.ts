@@ -10,6 +10,9 @@ import {OrdersComponent} from '../orders/orders.component';
 })
 export class EcommerceComponent implements OnInit {
 
+  orderFinished = false;
+  collapsed = true;
+
   @ViewChild('productsChild')
   productsChild: ProductComponent;
 
@@ -22,5 +25,16 @@ export class EcommerceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  finishOrder(orderFinished: boolean) {
+    this.orderFinished = orderFinished;
+  }
+
+  reset() {
+    this.orderFinished = false;
+    this.productsChild.reset();
+    this.shoppingCartChild.reset();
+    this.ordersChild.paid = false;
   }
 }
