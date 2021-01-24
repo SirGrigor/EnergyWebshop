@@ -5,7 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +23,7 @@ public class OrderProduct {
     @Column(nullable = false)
     private Integer productQuantity;
 
-    @javax.persistence.Transient
+    @Transient
     public Product getProduct() {
         return this.pk.getProduct();
     }

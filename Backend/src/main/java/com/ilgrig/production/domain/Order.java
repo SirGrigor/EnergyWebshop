@@ -28,13 +28,4 @@ public class Order {
     @OneToMany(mappedBy = "pk.order")
     private List<OrderProduct> orderProducts = new ArrayList<>();
 
-    @Transient
-    public Double getTotalOrderPrice() {
-        double sum = 0D;
-        List<OrderProduct> orderProducts = getOrderProducts();
-        for (OrderProduct op : orderProducts) {
-            sum += op.getTotalPrice();
-        }
-        return sum;
-    }
 }
