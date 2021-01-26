@@ -12,14 +12,18 @@
     </div>
   </div>
 </nav>
+<br>
 <div class="row position-relative">
+  <br>
   <div class="col-md-9">
     <app-product #productsChild [hidden]="orderFinished"></app-product>
   </div>
+  <br>
   <div class="col-md-3 position-relative">
     <app-shopping-cart (onOrderFinished)=finishOrder($event) #shoppingCartChild
                        [hidden]="orderFinished"></app-shopping-cart>
   </div>
+  <br>
   <div class="col-md-6 position-relative">
     <app-orders #orderChild [hidden]="!orderFinished"></app-orders>
   </div>
