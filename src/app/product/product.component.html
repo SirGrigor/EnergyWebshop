@@ -5,8 +5,8 @@
         <h4>{{order.product.productName}}</h4>
       </div>
       <div class="card-body">
-        <a [class.picture]="order.product.productQuantity === 0" href="#">
-          <img class="card-img-top"  alt="" src="{{order.product.productPictureUrl}}">
+        <a [class.picture]="order.product.productQuantity === 0" href="#" (click)=order.incrementProduct()>
+          <img class="card-img-top" src="{{order.product.productPictureUrl}}" alt="">
         </a>
         <h5 class="card-title">€{{order.product.productPrice}}</h5>
 
@@ -22,7 +22,7 @@
           </div>
           <div class="col-12" *ngIf="isProductSelected(order.product)">
             <button class="btn btn-primary btn-block"
-                    (click)="removeFromCart(order)">Remove From Cart
+                    (click)="removeFromCart(order)"> Remove From Cart
             </button>
           </div>
         </div>

@@ -9,4 +9,8 @@ export class ProductOrder {
     this.product = product;
     this.orderedProductQuantity = orderedProductQuantity;
   }
+
+  incrementProduct() {
+  this.orderedProductQuantity = this.orderedProductQuantity + 1;
+  }
 }
