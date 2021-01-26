@@ -18,15 +18,15 @@ public class ProductionApplication {
     @Bean
     CommandLineRunner runner(ProductService productService) {
         return args -> {
-            productService.saveProduct(new Product(1L, "Brownie", 0.65, "picture/url", true, ProductCategory.DOMAIN));
-            productService.saveProduct(new Product(2L, "Muffin", 1.00, "picture/url", true, ProductCategory.DOMAIN));
-            productService.saveProduct(new Product(3L, "Cake Pop", 1.35, "picture/url", true, ProductCategory.DOMAIN));
-            productService.saveProduct(new Product(4L, "Apple Tart", 1.50, "picture/url", true, ProductCategory.DOMAIN));
-            productService.saveProduct(new Product(5L, "Water", 1.50, "picture/url", true, ProductCategory.DOMAIN));
-            productService.saveProduct(new Product(6L, "Shirt", 2.00, "picture/url", false, ProductCategory.DONATED));
-            productService.saveProduct(new Product(7L, "Pants", 3.00, "picture/url", false, ProductCategory.DONATED));
-            productService.saveProduct(new Product(8L, "Jacket", 4.00, "picture/url", false, ProductCategory.DONATED));
-            productService.saveProduct(new Product(9L, "Toy", 1.00, "picture/url", false, ProductCategory.DONATED));
+            productService.saveProduct(new Product(1L, "Brownie", 0.65,  "http://placehold.it/200x100", true, 48, ProductCategory.DOMAIN));
+            productService.saveProduct(new Product(2L, "Muffin", 1.00,  "http://placehold.it/200x100", true, 36, ProductCategory.DOMAIN));
+            productService.saveProduct(new Product(3L, "Cake Pop", 1.35,  "http://placehold.it/200x100", true,24, ProductCategory.DOMAIN));
+            productService.saveProduct(new Product(4L, "Apple Tart", 1.50,  "http://placehold.it/200x100", true, 60,ProductCategory.DOMAIN));
+            productService.saveProduct(new Product(5L, "Water", 1.50,  "http://placehold.it/200x100", true, 30,ProductCategory.DOMAIN));
+            productService.saveProduct(new Product(6L, "Shirt", 2.00,  "http://placehold.it/200x100", false, 0,ProductCategory.DONATED));
+            productService.saveProduct(new Product(7L, "Pants", 3.00,  "http://placehold.it/200x100", false, 0,ProductCategory.DONATED));
+            productService.saveProduct(new Product(8L, "Jacket", 4.00,  "http://placehold.it/200x100", false, 0,ProductCategory.DONATED));
+            productService.saveProduct(new Product(9L, "Toy", 1.00,  "http://placehold.it/200x100", false, 0,ProductCategory.DONATED));
         };
     }
 

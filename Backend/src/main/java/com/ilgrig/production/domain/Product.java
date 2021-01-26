@@ -20,6 +20,7 @@ public class Product {
     private Double productPrice;
     private String productPictureUrl;
     private boolean isActive;
+    private int productQuantity;
 
     @Enumerated(value = EnumType.STRING)
     private ProductCategory productCategory;
