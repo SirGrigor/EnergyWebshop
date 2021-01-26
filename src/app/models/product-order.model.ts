@@ -2,11 +2,11 @@ import {Product} from './product.model';
 
 export class ProductOrder {
   product: Product;
-  productQuantity: number;
+  orderedProductQuantity: number;
 
 
-  constructor(product: Product, productQuantity: number) {
+  constructor(product: Product, orderedProductQuantity: number) {
     this.product = product;
-    this.productQuantity = productQuantity;
+    this.orderedProductQuantity = orderedProductQuantity;
   }
 }

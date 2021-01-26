@@ -29,16 +29,16 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
     this.loadTotal();
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
-
   private calculateTotal(products: ProductOrder[]): number {
     let sum = 0;
     products.forEach(value => {
-      sum += (value.product.productPrice * value.productQuantity);
+      sum += (value.product.productPrice * value.orderedProductQuantity);
     });
     return sum;
+  }
+
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   finishOrder() {
@@ -58,7 +58,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
       const productOrder = this.ecommerceService.SelectedProductOrder;
       if (productOrder) {
         this.orders.productOrders.push(new ProductOrder(
-          productOrder.product, productOrder.productQuantity));
+          productOrder.product, productOrder.orderedProductQuantity));
       }
       this.ecommerceService.ProductOrders = this.orders;
       this.orders = this.ecommerceService.ProductOrders;

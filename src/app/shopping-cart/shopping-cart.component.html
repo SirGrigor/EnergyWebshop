@@ -1,4 +1,4 @@
-<div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
   <div class="card-header text-center">Shopping Cart</div>
   <div class="card-body">
     <h5 class="card-title">Total: ${{total}}</h5>
@@ -7,11 +7,11 @@
 
     <ul>
       <li *ngFor="let order of orders.productOrders">
-        {{ order.product.productName }} - {{ order.productQuantity}} pcs.
+        {{ order.product.productName }} - {{ order.orderedProductQuantity}} pcs.
       </li>
     </ul>
 
-    <button class="btn btn-light btn-block" (click)="finishOrder()"
+    <button class="btn btn-light btn-block bg-primary" (click)="finishOrder()"
             [disabled]="orders.productOrders.length == 0">Checkout
     </button>
   </div>
