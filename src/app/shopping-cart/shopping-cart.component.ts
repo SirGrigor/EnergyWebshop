@@ -36,7 +36,7 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   private calculateTotal(products: ProductOrder[]): number {
     let sum = 0;
     products.forEach(value => {
-      sum += (value.product.price * value.productQuantity);
+      sum += (value.product.productPrice * value.productQuantity);
     });
     return sum;
   }

@@ -12,7 +12,7 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [];
-  productOrders: ProductOrders[] = [];
+  productOrders: ProductOrder[] = [];
   selectedProductOrder: ProductOrder;
   sub: Subscription;
   productSelected = false;
@@ -29,11 +29,16 @@ export class ProductComponent implements OnInit {
   }
 
   loadProducts() {
-    this.ecommerceService.getAllProducts().subscribe(
+    this.ecommerceService.getAllProducts()
+      .subscribe(
         (products: any[]) => {
           this.products = products;
-          console.log(products);
-        });
+          this.products.forEach(product => {
+            this.productOrders.push(new ProductOrder(product, 0));
+          });
+        },
+        (error) => console.log(error)
+      );
   }
 
   loadOrders() {
