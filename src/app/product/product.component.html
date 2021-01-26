@@ -17,7 +17,7 @@
             </label>
 
             <button class="btn btn-primary" (click)="addToCart(order)"
-                    [disabled]="order.orderedProductQuantity <= 0">Add To Cart
+                    [disabled]="order.orderedProductQuantity <= 0 || order.product.productQuantity <= 0 ">Add To Cart
             </button>
           </div>
           <div class="col-12" *ngIf="isProductSelected(order.product)">

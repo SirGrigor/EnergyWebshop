@@ -15,15 +15,12 @@ export class EcommerceService {
   private productOrderSubject = new Subject();
   private ordersSubject = new Subject();
   private totalSubject = new Subject();
-  private cashSubject = new Subject();
 
   private total: number;
-  private cash: number;
 
   ProductOrderChanged = this.productOrderSubject.asObservable();
   OrdersChanged = this.ordersSubject.asObservable();
   TotalChanged = this.totalSubject.asObservable();
-  CashChanged = this.cashSubject.asObservable();
 
   constructor(private http: HttpClient) {
   }
@@ -62,14 +59,4 @@ export class EcommerceService {
     this.total = value;
     this.totalSubject.next();
   }
-
-  get Cash() {
-    return this.cash;
-  }
-
-  set Cash(value: number) {
-    this.cash = value;
-    this.cashSubject.next();
-  }
-
 }

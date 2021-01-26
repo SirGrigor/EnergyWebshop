@@ -37,8 +37,4 @@ export class EcommerceComponent implements OnInit {
     this.shoppingCartChild.reset();
     this.ordersChild.paid = false;
   }
-
-  toggleCollapsed(): void {
-    this.collapsed = !this.collapsed;
-  }
 }
