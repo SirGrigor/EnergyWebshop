@@ -1,0 +1,38 @@
+<div class="col-lg-10 col-md-1 mb-1">
+  <div class="card-header">
+<h2 class="text-center">Order</h2>
+<ul>
+  <li *ngFor="let order of orders.productOrders">
+    {{ order.product.productName }} -  €{{ order.product.productPrice }} x {{ order.orderedProductQuantity}} pcs.
+  </li>
+</ul>
+    
+<form #cashInsertForm="ngForm"  class="container">
+  <label>Please Insert Cash</label>
+  <label>
+    <input class="card-title" type="number" ngModel name="insert">
+  </label>
+  <button class="btn btn-primary btn-block"
+          (click)="onSubmit(cashInsertForm)"
+          type="submit" [disabled]="!cashInsertForm.valid"
+          *ngIf="!inserted">
+    Insert
+  </button>
+  <div class="alert alert-success" role="alert" *ngIf="inserted">
+    <strong>Congratulation!</strong> You we received your payment.
+  </div>
+</form>
+<div class="container">
+  <h3 class="text-left">Total amount to pay: ${{ total }}</h3>
+</div>
+<button class="btn btn-primary btn-block" (click)="pay()" *ngIf="!paid && inserted">Pay</button>
+
+<div class="alert alert-success" role="alert" *ngIf="paid">
+  <strong>Congratulation!</strong> You successfully made the order.
+</div>
+
+<div class="container" *ngIf="paid">
+  <h3 class="text-left">CashBack: €{{ insert - total}}</h3>
+</div>
+</div>
+</div>
