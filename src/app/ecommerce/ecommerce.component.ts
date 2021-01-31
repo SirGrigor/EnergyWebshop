@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ProductComponent} from '../product/product.component';
 import {ShoppingCartComponent} from '../shopping-cart/shopping-cart.component';
 import {OrdersComponent} from '../orders/orders.component';
+import {DonatedItemsComponent} from '../donated-items/donated-items.component';
 
 @Component({
   selector: 'app-ecommerce',
@@ -21,6 +22,9 @@ export class EcommerceComponent implements OnInit {
 
   @ViewChild('orderChild')
   ordersChild: OrdersComponent;
+
+  @ViewChild('donatedChild')
+  donatedChild: DonatedItemsComponent;
 
   constructor() { }
 

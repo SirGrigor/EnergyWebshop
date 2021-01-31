@@ -10,6 +10,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {EcommerceService} from './services/EcommerceService';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { OrdersComponent } from './orders/orders.component';
+import { DonatedItemsComponent } from './donated-items/donated-items.component';
+import {RouterModule, Routes} from '@angular/router';
+import {routing} from './app-routing.module';
 
 
 @NgModule({
@@ -18,14 +21,18 @@ import { OrdersComponent } from './orders/orders.component';
     EcommerceComponent,
     ProductComponent,
     ShoppingCartComponent,
-    OrdersComponent
+    OrdersComponent,
+    DonatedItemsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    routing
   ],
+  exports: [RouterModule],
   providers: [EcommerceService],
   bootstrap: [AppComponent]
 })

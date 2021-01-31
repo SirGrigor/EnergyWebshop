@@ -5,7 +5,8 @@
         <h4>{{order.product.productName}}</h4>
       </div>
       <div class="card-body">
-        <a [class.picture]="order.product.productQuantity === 0" href="#" (click)=order.incrementProduct()>
+        <a [class.picture]="order.product.productQuantity === 0" href="#"
+           (click)=order.incrementProduct()>
           <img class="card-img-top" src="{{order.product.productPictureUrl}}" alt="">
         </a>
         <h5 class="card-title">€{{order.product.productPrice}}</h5>
@@ -13,11 +14,12 @@
         <div class="row">
           <div class="col-12 padding-12" *ngIf="!isProductSelected(order.product)">
             <label>
-              <input type="number" min="0" class="form-control" [(ngModel)]=order.orderedProductQuantity>
+              <input type="number" min="0" class="form-control"
+                     [(ngModel)]=order.orderedProductQuantity>
             </label>
 
             <button class="btn btn-primary" (click)="addToCart(order)"
-                    [disabled]="order.orderedProductQuantity <= 0 || order.product.productQuantity <= 0 ">Add To Cart
+                    [disabled]="order.orderedProductQuantity <= 0 || order.product.productQuantity <= 0"> Add To Cart
             </button>
           </div>
           <div class="col-12" *ngIf="isProductSelected(order.product)">

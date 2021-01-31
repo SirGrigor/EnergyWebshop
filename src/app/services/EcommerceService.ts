@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {ProductOrder} from '../models/product-order.model';
 import {ProductOrders} from '../models/product-orders.model';
 import {Subject} from 'rxjs/Subject';
+import {ProductDonated} from '../models/product-donated.model';
 
 @Injectable()
 export class EcommerceService {
@@ -15,6 +16,8 @@ export class EcommerceService {
   private productOrderSubject = new Subject();
   private ordersSubject = new Subject();
   private totalSubject = new Subject();
+
+  private productDonated: ProductDonated[];
 
   private total: number;
 
@@ -58,5 +61,19 @@ export class EcommerceService {
   set Total(value: number) {
     this.total = value;
     this.totalSubject.next();
+  }
+
+  setDonatedItemsList(productList: ProductDonated[]) {
+    this.productDonated = productList;
+  }
+
+  getDonatedItemsList() {
+    return this.productDonated;
+  }
+
+  setDonatedItemAmount(product: ProductDonated) {
+   const index = this.productDonated.findIndex(productDonated =>
+      productDonated.product.productId === product.product.productId);
+    this.productDonated[index] = product;
   }
 }
